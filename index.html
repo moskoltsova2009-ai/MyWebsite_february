@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English with Joy | Репетитор по английскому языку</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #4ECDC4;
+            --secondary: #6C5CE7;
+            --accent: #FFE66D;
+            --dark: #2D3436;
+            --light: #F7F9FC;
+            --white: #FFFFFF;
+            --shadow: 0 10px 20px rgba(108, 92, 231, 0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Nunito', sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        header {
+            background: var(--white);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-weight: 900;
+            font-size: 1.5rem;
+            color: var(--secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 700;
+            margin-left: 20px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 4rem 5%;
+            min-height: 80vh;
+            background: linear-gradient(135deg, var(--white) 50%, #e0f7fa 50%);
+            position: relative;
+        }
+
+        .hero-text {
+            flex: 1;
+            padding-right: 2rem;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+        }
+
+        .hero h1 span {
+            color: var(--white);
+            background: var(--secondary);
+            padding: 0 15px;
+            border-radius: 10px;
+            transform: rotate(-2deg);
+            display: inline-block;
+            box-shadow: 4px 4px 0px var(--accent);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: #555;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--secondary);
+            color: var(--white);
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            box-shadow: 0 5px 15px rgba(108, 92, 231, 0.4);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            background: var(--primary);
+            box-shadow: 0 8px 20px rgba(78, 205, 196, 0.4);
+        }
+
+        .hero-img {
+            flex: 1;
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+
+        .photo-container {
+            width: 400px;
+            height: 400px;
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            animation: morph 8s ease-in-out infinite;
+            background-color: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 5px solid var(--white);
+        }
+
+        .photo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @keyframes morph {
+            0% { border-radius: 60% 40% 30% 70%/60% 30% 70% 40%; }
+            50% { border-radius: 30% 60% 70% 40%/50% 60% 30% 60%; }
+            100% { border-radius: 60% 40% 30% 70%/60% 30% 70% 40%; }
+        }
+
+        .features {
+            padding: 5rem 5%;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--dark);
+        }
+
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
+            border-bottom: 5px solid var(--primary);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-bottom-color: var(--secondary);
+        }
+
+        .card-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .card h3 {
+            margin-bottom: 1rem;
+            color: var(--secondary);
+        }
+
+        .about {
+            background: var(--secondary);
+            color: var(--white);
+            padding: 5rem 5%;
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+        }
+
+        .about-content {
+            flex: 1;
+        }
+
+        .about-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-list {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+
+        .about-list li {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .about-list li::before {
+            content: "✨";
+            margin-right: 10px;
+        }
+
+        .about-stats {
+            display: flex;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .stat-box {
+            background: rgba(255,255,255,0.2);
+            padding: 1rem 2rem;
+            border-radius: 15px;
+            text-align: center;
+            backdrop-filter: blur(5px);
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 900;
+            display: block;
+            color: var(--accent);
+        }
+
+        .contact {
+            padding: 5rem 5%;
+            text-align: center;
+            background: var(--white);
+        }
+
+        .yandex-form-btn {
+            display: inline-block;
+            background: #FC3F1D; /* Фирменный красный Яндекс */
+            color: var(--white);
+            padding: 20px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.2rem;
+            box-shadow: 0 5px 15px rgba(252, 63, 29, 0.4);
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin-top: 1rem;
+        }
+
+        .yandex-form-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(252, 63, 29, 0.6);
+        }
+
+        footer {
+            background: var(--dark);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column-reverse;
+                text-align: center;
+                background: var(--light);
+                padding-top: 2rem;
+            }
+            
+            .hero-text {
+                padding-right: 0;
+                margin-top: 2rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .photo-container {
+                width: 300px;
+                height: 300px;
+            }
+
+            .about {
+                flex-direction: column;
+            }
+            
+            nav {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">EnglishJoy</div>
+        <nav>
+            <a href="#about">Обо мне</a>
+            <a href="#features">Методика</a>
+            <a href="#contact">Контакты</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Английский без <span>боли</span> и зубрежки!</h1>
+            <p>Забудьте про скучные учебники. Учим язык через сериалы, мемы и живое общение. Говорите свободно уже через 3 месяца.</p>
+            <!-- 🔹 ЗДЕСЬ ССЫЛКА НА ЯНДЕКС ФОРМУ 🔹 -->
+            <a href="https://forms.yandex.ru/u/69a31657d046882cebc0c2fb" target="_blank" class="btn">Записаться на пробный урок</a>
+        </div>
+        <div class="hero-img">
+            <div class="photo-container">
+                <img src="images/photo.jpg" alt="Фото репетитора">
+            </div>
+        </div>
+    </section>
+
+    <section class="features" id="features">
+        <h2 class="section-title">Почему у меня круто?</h2>
+        <div class="cards-container">
+            <div class="card">
+                <div class="card-icon">🚀</div>
+                <h3>Быстрый старт</h3>
+                <p>Никакой воды. Сразу учим фразы, которые реально используются в жизни и путешествиях.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🎮</div>
+                <h3>Геймификация</h3>
+                <p>Уроки проходят в формате игры. Используем интерактивные доски и современные платформы.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">☕</div>
+                <h3>Комфорт</h3>
+                <p>Дружелюбная атмосфера без оценок и стресса. Ошибаться — это нормально и весело!</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="about-content">
+            <h2>Hi, I'm Victoria!</h2>
+            <p>Я сертифицированный преподаватель (TEFL/CELTA) с опытом более 5 лет. Моя миссия — доказать, что грамматика может быть вкусной, как круассан, а акцент — стильным, как в сериалах Netflix.</p>
+            <ul class="about-list">
+                <li>Специализация: Разговорный английский и IELTS</li>
+                <li>Более 500 довольных учеников</li>
+                <li>Индивидуальный план для каждого</li>
+            </ul>
+            <div class="about-stats">
+                <div class="stat-box">
+                    <span class="stat-number">5+</span>
+                    лет опыта
+                </div>
+                <div class="stat-box">
+                    <span class="stat-number">100%</span>
+                    результат
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <h2 class="section-title">Давай начнем учиться!</h2>
+        <p style="margin-bottom: 2rem;">Заполни анкету — это займет всего 2 минуты</p>
+        
+        <!-- 🔹 КНОПКА С ЯНДЕКС ФОРМОЙ 🔹 -->
+        <a href="https://forms.yandex.ru/u/69a31657d046882cebc0c2fb" target="_blank" class="yandex-form-btn">
+            📝 Заполнить анкету ученика
+        </a>
+        
+        <p style="margin-top: 2rem; color: #666; font-size: 0.9rem;">
+            После заполнения я свяжусь с тобой в течение 24 часов
+        </p>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 EnglishJoy. Сделано с любовью к языку.</p>
+        <div style="margin-top: 10px; font-size: 1.5rem;">
+            <span style="margin: 0 10px; cursor: pointer;">📸</span>
+            <span style="margin: 0 10px; cursor: pointer;">✈️</span>
+            <span style="margin: 0 10px; cursor: pointer;">💬</span>
+        </div>
+    </footer>
+
+</body>
+</html>
